@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: hair-removal-tracking
+    env: static
+    buildCommand: cd client && npm install && npm run build
+    staticPublishPath: client/build
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: no-cache
